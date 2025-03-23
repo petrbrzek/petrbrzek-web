@@ -1,7 +1,7 @@
-
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -15,6 +15,22 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center"
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative w-40 h-40 mx-auto mb-8 overflow-hidden rounded-full border-4 border-primary/10"
+          >
+            <Image
+              src="https://assets.macaly-user-data.dev/jfl9hdqnp4bk63xoek9djime/pprrfozjtzvpxx5oglm8heiq/JgCjWBYFua-uYma94BT4X/petrbrzek-avatar.jpg"
+              alt="Petr Brzek"
+              fill
+              sizes="(max-width: 768px) 100vw, 160px"
+              className="object-cover"
+              priority
+            />
+          </motion.div>
+          
           <motion.h1 
             className="text-4xl md:text-6xl font-bold font-heading mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -34,26 +50,13 @@ export function Hero() {
           </motion.h2>
           
           <motion.p 
-            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             Building the future of AI-powered developer tools and fostering tech communities in Prague
           </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <a 
-              href="#about" 
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-10 py-2 px-4"
-            >
-              Learn More
-            </a>
-          </motion.div>
         </motion.div>
       </div>
       
