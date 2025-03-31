@@ -19,14 +19,14 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-40 h-40 mx-auto mb-8 overflow-hidden rounded-full border-4 border-primary/10"
+            className="relative w-40 h-40 mx-auto mb-8 overflow-visible rounded-full border-4 border-primary/10 avatar-glow"
           >
             <Image
               src="https://assets.macaly-user-data.dev/jfl9hdqnp4bk63xoek9djime/pprrfozjtzvpxx5oglm8heiq/JgCjWBYFua-uYma94BT4X/petrbrzek-avatar.jpg"
               alt="Petr Brzek"
               fill
               sizes="(max-width: 768px) 100vw, 160px"
-              className="object-cover"
+              className="object-cover rounded-full"
               priority
             />
           </motion.div>

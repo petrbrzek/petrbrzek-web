@@ -80,3 +80,44 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .avatar-glow {
+    position: relative;
+    isolation: isolate;
+  }
+  
+  .avatar-glow::before {
+    content: "";
+    position: absolute;
+    inset: -80px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.95) 0%, rgba(99, 102, 241, 0.85) 20%, rgba(129, 140, 248, 0.75) 40%, rgba(165, 180, 252, 0.6) 60%, transparent 85%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(35px);
+    animation: fluid-pulse 8s ease-in-out infinite;
+  }
+  
+  @keyframes fluid-pulse {
+    0% {
+      transform: scale(0.9) rotate(0deg);
+      filter: blur(35px);
+    }
+    25% {
+      transform: scale(1.05) rotate(5deg);
+      filter: blur(40px);
+    }
+    50% {
+      transform: scale(1.1) rotate(0deg);
+      filter: blur(45px);
+    }
+    75% {
+      transform: scale(1.05) rotate(-5deg);
+      filter: blur(40px);
+    }
+    100% {
+      transform: scale(0.9) rotate(0deg);
+      filter: blur(35px);
+    }
+  }
+}
